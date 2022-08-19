@@ -12,6 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 	@import url("css/Main.css");
+	@import url("css/Modal.css");
+	.carousel-inner img {
+	    width: 100%;
+	    height: 100%;
+	  }
 </style>
 <script>
 	$(function() {	
@@ -46,23 +51,51 @@
 	
 	function openModalin() {
 		$('.modalin').addClass("is-open");
+		$('.modalin').css({"position": "absolute", "z-index": "1"});
 		$('body').css("overflow", "hidden");
 	};
 
 	function closeModalin() {
 		$('.modalin').removeClass("is-open");
+		$('.modalin').css('position', 'fixed');
 		$('body').css("overflow", "initial");
 	};
 	
 	function openModalout() {
 		$('.modalout').addClass("is-open");
+		$('.modalout').css({"position": "absolute", "z-index": "1"});
 		$('body').css("overflow", "hidden");
 	};
 
 	function closeModalout() {
 		$('.modalout').removeClass("is-open");
+		$('.modalout').css('position', 'fixed');
 		$('body').css("overflow", "initial");
 	};
+	
+	$(document).ready(function(){
+	  // Activate Carousel
+	  $("#myCarousel").carousel();
+	    
+	  // Enable Carousel Indicators
+	  $(".item1").click(function(){
+	    $("#myCarousel").carousel(0);
+	  });
+	  $(".item2").click(function(){
+	    $("#myCarousel").carousel(1);
+	  });
+	  $(".item3").click(function(){
+	    $("#myCarousel").carousel(2);
+	  });
+	    
+	  // Enable Carousel Controls
+	  $(".carousel-control-prev").click(function(){
+	    $("#myCarousel").carousel("prev");
+	  });
+	  $(".carousel-control-next").click(function(){
+	    $("#myCarousel").carousel("next");
+	  });
+	});
 	
 </script>
 </head>
@@ -135,7 +168,35 @@
 		</div>
     </div>
     <div class="container my-5">
-    	히히
+    	<div class="row">
+            <div class="col-7 d-flex align-items-center">
+                <div class="about-text">
+                    <h5 class="small-text">환영합니다 정재호 고객님</h5>
+                    <h1 class="animated animated-text">
+                        <span class="mr-2">잔액 조회</span>
+                            <div class="animated-info">
+                                <span class="animated-item">연동 계좌 : 6,400,000원</span>
+                                <span class="animated-item">기부 계좌 : 500,000원</span>
+                            </div>
+                    </h1>
+					<br>
+                    <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
+                    <br><br>
+                    <div class="d-flex justify-content-around">
+                      <button class="btn-slide-line">계좌 관리</button>
+                      <button class="btn-slide-line">기부 금액 구매</button>
+                      <button class="btn-slide-line">송금하기</button>
+                    </div>
+                </div>
+            </div>
+			<br><br>
+            <div class="col-5">
+                <div class="about-image svg">
+                    <img src="img/undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image">
+                </div>
+            </div>
+
+        </div>
     </div>
     <%@ include file="../Common/Footer.jsp" %>
 </body>
