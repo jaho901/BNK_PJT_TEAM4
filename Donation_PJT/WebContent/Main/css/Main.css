@@ -37,13 +37,14 @@
   top: 0;
   right: 0;
   left: 0;
-  animation: BottomTotop 6s linear infinite 0s;
+  cursor: text;
+  animation: BottomTotop 8s linear infinite 0s;
 }
 .animated-item:nth-child(2n+2) {
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 .animated-item:nth-child(3n+3) {
-  animation-delay: 4s;
+  animation-delay: 6s;
 }
 
 @keyframes BottomTotop {
@@ -62,7 +63,7 @@
     opacity: 1;
     transform: translateY(0px);
   }
-  30% {
+  50% {
     opacity: 0;
     transform: translateY(5px);
   }
@@ -88,11 +89,10 @@ button {
 	cursor: pointer;
 	text-transform: uppercase;
 	background-color: #ffffff;
-	border: 1px solid rgba(22, 76, 167, 0.6);
-	border-radius: 15px;
-	color: #1d89ff;
-	font-weight: 400;
-	font-size: 20px;
+	border: 3px solid rgb(255 194 13);
+	color: #5b5b5b;
+	font-weight: bold;
+	font-size: 22px;
 	font-family: inherit;
 	z-index: 0;
 	overflow: hidden;
@@ -148,7 +148,7 @@ button:hover span {
 }
 
 .btn-slide-line {
-	border-radius: 15px;
+	border-radius: 30px;
 }
 
 .btn-slide-line.center:after {
@@ -161,9 +161,9 @@ button:hover span {
   transition: 0.3s;
   content: "";
   width: 0;
-  bottom: 0;
+  bottom: -15%;
   height: 3px;
-  background: #164ca7;
+  background: rgb(255 194 13);
 }
 .btn-slide-line:hover {
   cursor: pointer;
