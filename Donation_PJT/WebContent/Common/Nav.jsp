@@ -5,8 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="../Common/css/Nav.css?ver=1">
 	<style scoped>
+		@import url("../Common/css/Nav.css?ver=1");
 	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -17,8 +17,12 @@
 				location.href="../Main/Main.jsp"	
 			})
 			
-			$('#donation').click(function() {
+			$('.nav-inner #donation').click(function() {
 				location.href="../Donation/Donation.jsp"
+			})
+			
+			$('.nav-inner #card').click(function() {
+				location.href="../Card/Card.jsp"
 			})
 		})
 	</script>
@@ -33,7 +37,7 @@
        	</div>
         <div class="nav-inner offset-2 col-4">
        		<span id="donation">기부</span>
-       		<span>카드발급</span>
+       		<span id="card">카드발급</span>
        		<span>이벤트</span>
        		<span>공지사항</span>
        	</div>
