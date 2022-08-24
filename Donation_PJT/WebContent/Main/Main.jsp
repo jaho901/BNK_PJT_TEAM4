@@ -1,70 +1,99 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<style>
-	@import url("css/Main.css");
-</style>
-<script>
-	$(function() {	
-		$('#login').click(function() {
-			openModalin();
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<style scoped>
+		@import url("css/Main.css?ver=1");
+		@import url("css/Modal.css?ver=1");
+	</style>
+	<script>
+		$(function() {	
+			$('#login').click(function() {
+				openModalin();
+			})
+			
+			$('.closein-button').click(function() {
+				closeModalin();
+			})
+			
+			$('#signup').click(function() {
+				openModalout();
+			})
+			
+			$('.closeout-button').click(function() {
+				closeModalout();
+			})
+			
+			$('.goToSignup').click(function() {
+				closeModalin();
+				openModalout();
+			})
+			
+			$('.goToLogin').click(function() {
+				closeModalout();
+				openModalin();
+			})
+			
 		})
 		
-		$('.closein-button').click(function() {
-			closeModalin();
-		})
 		
-		$('#signup').click(function() {
-			openModalout();
-		})
-		
-		$('.closeout-button').click(function() {
-			closeModalout();
-		})
-		
-		$('.goToSignup').click(function() {
-			closeModalin();
-			openModalout();
-		})
-		
-		$('.goToLogin').click(function() {
-			closeModalout();
-			openModalin();
-		})
-		
-	})
+		function openModalin() {
+			$('.modalin').addClass("is-open");
+			$('.modalin').css({"position": "absolute", "z-index": "1"});
+			$('body').css("overflow", "hidden");
+		};
 	
+		function closeModalin() {
+			$('.modalin').removeClass("is-open");
+			$('.modalin').css('position', 'fixed');
+			$('body').css("overflow", "initial");
+		};
+		
+		function openModalout() {
+			$('.modalout').addClass("is-open");
+			$('.modalout').css({"position": "absolute", "z-index": "1"});
+			$('body').css("overflow", "hidden");
+		};
 	
-	function openModalin() {
-		$('.modalin').addClass("is-open");
-		$('body').css("overflow", "hidden");
-	};
-
-	function closeModalin() {
-		$('.modalin').removeClass("is-open");
-		$('body').css("overflow", "initial");
-	};
-	
-	function openModalout() {
-		$('.modalout').addClass("is-open");
-		$('body').css("overflow", "hidden");
-	};
-
-	function closeModalout() {
-		$('.modalout').removeClass("is-open");
-		$('body').css("overflow", "initial");
-	};
-	
-</script>
+		function closeModalout() {
+			$('.modalout').removeClass("is-open");
+			$('.modalout').css('position', 'fixed');
+			$('body').css("overflow", "initial");
+		};
+		
+		$(document).ready(function(){
+		  // Activate Carousel
+		  $("#myCarousel").carousel();
+		    
+		  // Enable Carousel Indicators
+		  $(".item1").click(function(){
+		    $("#myCarousel").carousel(0);
+		  });
+		  $(".item2").click(function(){
+		    $("#myCarousel").carousel(1);
+		  });
+		  $(".item3").click(function(){
+		    $("#myCarousel").carousel(2);
+		  });
+		    
+		  // Enable Carousel Controls
+		  $(".carousel-control-prev").click(function(){
+		    $("#myCarousel").carousel("prev");
+		  });
+		  $(".carousel-control-next").click(function(){
+		    $("#myCarousel").carousel("next");
+		  });
+		});
+		
+	</script>
 </head>
 <body>
     <%@ include file="../Common/Nav.jsp" %>
@@ -134,8 +163,36 @@
             </button>
 		</div>
     </div>
-    <div class="container my-5">
-    	히히
+    <div class="container my-5 pb-4">
+    	<div class="row">
+            <div class="col-7 d-flex align-items-center">
+                <div class="about-text">
+                    <h5 class="small-text">환영합니다 정재호 고객님</h5>
+                    <h1 class="animated animated-text">
+                        <span class="mr-2">잔액 조회</span>
+                            <div class="animated-info">
+                                <span class="animated-item">연동 계좌 : 6,400,000원</span>
+                                <span class="animated-item">마일리지 : 500,000원</span>
+                            </div>
+                    </h1>
+					<br>
+                    <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
+                    <br><br>
+                    <div class="d-flex justify-content-around">
+                      <button class="btn-slide-line">계좌 관리</button>
+                      <button class="btn-slide-line">마일리지 구매</button>
+                      <button class="btn-slide-line">마일리지 내역</button>
+                    </div>
+                </div>
+            </div>
+			<br><br>
+            <div class="col-5">
+                <div class="about-image svg">
+                    <img src="img/undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image">
+                </div>
+            </div>
+
+        </div>
     </div>
     <%@ include file="../Common/Footer.jsp" %>
 </body>
