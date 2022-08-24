@@ -9,24 +9,29 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Insert title here</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 	<style scoped>
 		@import url("css/Card.css?ver=1");
-		#containment-wrapper { width: 95%; height:150px; border:2px solid #ccc; padding: 10px; }
 	</style>
 
 	<script>
+		$(function() {
+			$('#draggable3').click(function() {
+				console.log($("containment-wrapper"))
+			})
+		})
+	
+		$(function() {
+		    $("#draggable3").draggable({ containment: "#containment-wrapper", scroll: false });
+		});
+		
 		$(window).on('load', function() {
 			$('#card').addClass('loaded');
 		});
-		
-		$( function() {
-		    $( "#draggable3" ).draggable({ containment: "#containment-wrapper", scroll: false });
-		  } );
-		
 		
 		$(function() {	
 			
@@ -87,14 +92,14 @@
 							<div class="row" style="height: 100vh;">
 								<div class="col-4 d-flex flex-column justify-content-between">
 									<img class="card__logo--front" src="img/bnk_logo.png">
-									<div>
+									<div style="margin-left: 10px; margin-bottom: 10px;">
 										<span class="card__content">남유진과 아이들</span>
 									</div>
 								</div>
 								<div class="col-8">
-									<div id="containment-wrapper">
-									  <div id="draggable3" class="draggable ui-widget-content">
-									    <p>하하하</p>
+									<div id="containment-wrapper" style="border: none; height: 100%; padding-right: 30px;">
+									  <div id="draggable3" class="draggable ui-widget-content" style="border: none; width: 40%;">
+									    <img src="img/MrB.png" class="emo" style="width: 140%;">
 									  </div>
 									</div>
 								</div>
@@ -113,7 +118,7 @@
 							<div class="card__expiry-date">10/17</div>
 							<div>
 								<div class="card__owner">
-									Jane Doe
+									yudingg
 									<img class="card__logo--back" src="img/bnk_logo.png">							
 								</div>
 							</div>
