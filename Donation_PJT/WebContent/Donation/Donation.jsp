@@ -17,7 +17,6 @@
 	<script>
 		$(window).on('load', function() {
 			$('#donation').addClass('loaded');
-			
 		});
 		$(function() {
 			$('.cards').on('click', 'screen__view_part', changeRecent())

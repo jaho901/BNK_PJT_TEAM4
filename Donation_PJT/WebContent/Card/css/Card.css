@@ -22,7 +22,7 @@ a {
   display: inline-block;
   vertical-align: middle;
   text-align: left;
-  padding: 30px;
+  padding: 10px;
   margin-bottom: 10px;
   color: #fff;
   border: 1px solid black;
@@ -52,9 +52,10 @@ a {
   bottom: 20px;
 }
 .card__strip {
-  background: #000;
-  height: 50px;
-  margin-bottom: 30px;
+	background: #000;
+	height: 50px;
+	margin-bottom: 20px;
+    margin-top: 10px;
 }
 .card__signature {
   float: left;
@@ -74,7 +75,8 @@ a {
 
 .card__logo--front {
 	width: 80%;
-	
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 .card__logo--back {
@@ -369,6 +371,11 @@ section {
 	border: 2px solid #e2d0a8;
 	outline: none;
 	border-radius: 8px;
+}
+
+.emo {
+	width: 50%;
+	cursor: pointer;
 }
 
 /* button */
