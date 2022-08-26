@@ -159,5 +159,22 @@ body {
 	background-color: #eb47c2;
 }
 .smooth #footer {
-	background-color: #c7b4b4;
+	background-color: #ebc247;
+}
+
+h5 {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	font-weight: bold
+}
+
+.footer-btn {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #1d1e22;
+	background-color: #f4f4f4;
+	mix-blend-mode: screen;
+	border-radius: 0.25em;
+	padding: 0.3em 0.5em;
+	margin-left: 2rem;
 }
