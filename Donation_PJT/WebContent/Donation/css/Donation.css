@@ -111,12 +111,12 @@
 }
 
 .card__info {
-	z-index: 2;
 	background-color: #fff;
 	border-bottom-left-radius: 12px;
 	border-bottom-right-radius: 12px;
 	padding: 16px 24px 24px 24px;
 }
+
 
 .card__category {
     font-family: 'Raleway', sans-serif;
